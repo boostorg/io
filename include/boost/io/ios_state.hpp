@@ -10,6 +10,7 @@
 #define BOOST_IO_IOS_STATE_HPP
 
 #include <boost/io_fwd.hpp>  // self include
+#include <boost/detail/workaround.hpp>
 
 #include <ios>        // for std::ios_base, std::basic_ios, etc.
 #ifndef BOOST_NO_STD_LOCALE
@@ -18,8 +19,6 @@
 #include <ostream>    // for std::basic_ostream
 #include <streambuf>  // for std::basic_streambuf
 #include <string>     // for std::char_traits
-
-#include <boost/detail/workaround.hpp>  // for BOOST_WORKAROUND
 
 namespace boost
 {
