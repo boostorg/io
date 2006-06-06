@@ -19,6 +19,7 @@
 #include <streambuf>  // for std::basic_streambuf
 #include <string>     // for std::char_traits
 
+#include <boost/detail/workaround.hpp>  // for BOOST_WORKAROUND
 
 namespace boost
 {
