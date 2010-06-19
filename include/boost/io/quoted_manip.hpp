@@ -13,7 +13,9 @@
 #define BOOST_IO_QUOTED_MANIP
 
 #include <iosfwd>
+#include <ios>
 #include <string>
+#include <iterator>
 #include <boost/io/ios_state.hpp>
 
 namespace boost
@@ -130,11 +132,17 @@ namespace boost
         {
           boost::io::ios_flags_saver ifs(is);
           is >> std::noskipws;
-          for (;;)
+          for (;;)  
           {
             is >> c;
+            if (!is.good())  // cope with I/O errors or end-of-file
+              break;
             if (c == proxy.escape)
+            {
               is >> c;
+              if (!is.good())  // cope with I/O errors or end-of-file
+                break;
+            }
             else if (c == proxy.delim)
               break;
             proxy.string += c;

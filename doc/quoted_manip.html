@@ -4,7 +4,7 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-  <title>Boost quoted string manipulator</title>
+  <title>Boost &quot;quoted&quot; I/O manipulator</title>
   <meta name="generator" content="Microsoft FrontPage 5.0" />
   <link rel="stylesheet" type="text/css" href="../../../doc/html/minimal.css" />
 </head>
@@ -19,9 +19,9 @@ style="border-collapse: collapse">
         src="../../../boost.png" alt="boost.png (6897 bytes)" align="middle"
         width="300" height="86" border="0" /></a></td>
       <td>
-      <h1 align="center">Quoted String<br>
-      Stream
-      I/O Manipulator</h1>
+      <h1 align="center">&quot;Quoted&quot;
+      I/O Manipulator<br>
+      for Strings</h1>
       </td>
     </tr>
   </tbody>
@@ -43,7 +43,7 @@ std::cout &lt;&lt; round_trip; // outputs: fooled
 
 assert(original == round_trip); // assert will fire</pre>
 </blockquote>
-<p>The Boost quoted string stream I/O manipulator places delimiters, defaulted 
+<p>The Boost <code>quoted</code> stream I/O manipulator places delimiters, defaulted 
 to the double-quote (<code>&quot;</code>), around strings on output, and strips off 
 the delimiters on input. This ensures strings with embedded spaces round-trip as 
 desired. For example,</p>
@@ -59,6 +59,11 @@ std::cout &lt;&lt; quoted(original); // outputs: &quot;fooled you&quot;
 std::cout &lt;&lt; round_trip;       // outputs: fooled you
 
 assert(original == round_trip); // assert will not fire</pre>
+</blockquote>
+<p>If the string contains the delimiter character, on output that character will 
+be preceded by an escape character, as will the escape character itself:</p>
+<blockquote>
+  <pre>std::cout &lt;&lt; quoted(&quot;'Jack &amp; Jill'&quot;, '&amp;', '\'');  // outputs: '&amp;'Jack &amp;&amp; Jill&amp;''</pre>
 </blockquote>
 <h2>Header &lt;boost/io/quoted_manip.hpp&gt; synopsis</h2>
 <pre>namespace boost
@@ -113,7 +118,8 @@ type with an implementation supplied <code>operator&gt;&gt;</code>:</p>
     <code>operator==</code>, then:<ul>
       <li>Turn off the <code>skipws</code> flag.</li>
       <li><code>string.clear()</code></li>
-      <li>Until an unescaped <code>delim</code> character is reached, extract 
+      <li>Until an unescaped <code>delim</code> character is reached or <code>
+      is.not_good()</code>, extract 
       characters from <code>os</code> and append them to <code>string</code>, 
       except that if an <code>escape</code> is reached, ignore it and append the 
       next character to <code>string</code>.</li>
@@ -139,7 +145,7 @@ form of the templates. </p>
 <p>Distributed under the Boost Software License, Version 1.0. See
 <a href="http://www.boost.org/LICENSE_1_0.txt">www.boost.org/LICENSE_1_0.txt</a></p>
 <p>Revised
-<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%d %B %Y" startspan -->18 June 2010<!--webbot bot="Timestamp" endspan i-checksum="17559" --></p>
+<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%d %B %Y" startspan -->19 June 2010<!--webbot bot="Timestamp" endspan i-checksum="17561" --></p>
 
 </body>
 </html>
