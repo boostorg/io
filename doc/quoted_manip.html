@@ -20,11 +20,22 @@ style="border-collapse: collapse">
         width="300" height="86" border="0" /></a></td>
       <td>
       <h1 align="center">&quot;Quoted&quot;
-      I/O Manipulator<br>
+      I/O Manipulators<br>
       for Strings</h1>
       </td>
     </tr>
   </tbody>
+</table>
+
+<table border="1" cellpadding="5" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td>
+    <p align="center"><b>&quot;Quoted&quot;
+      I/O Manipulators
+      for Strings are not yet accepted into Boost as public components. Thus the 
+    header file is currently located in &lt;boost/io/detail/quoted_manip.hpp&gt;, and 
+    this documentation page is not linked to from official documentation.</b></td>
+  </tr>
 </table>
 
 <h2>Introduction</h2>
@@ -65,7 +76,7 @@ be preceded by an escape character, as will the escape character itself:</p>
 <blockquote>
   <pre>std::cout &lt;&lt; quoted(&quot;'Jack &amp; Jill'&quot;, '&amp;', '\'');  // outputs: '&amp;'Jack &amp;&amp; Jill&amp;''</pre>
 </blockquote>
-<h2>Header &lt;boost/io/quoted_manip.hpp&gt; synopsis</h2>
+<h2>Header <a href="../../../boost/io/detail/quoted_manip.hpp">&lt;boost/io/quoted_manip.hpp&gt;</a> synopsis</h2>
 <pre>namespace boost
 {
   namespace io
