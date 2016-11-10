@@ -20,7 +20,7 @@
 #include <istream>   // for std::iostream
 #include <locale>    // for std::locale, std::numpunct
 #include <sstream>   // for std::stringstream, etc.
-#if defined(BOOST_GCC)
+#if defined(BOOST_GCC) || (defined(BOOST_CLANG) && defined(BOOST_GNU_STDLIB))
 #include <stdexcept>
 #endif
 

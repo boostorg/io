@@ -25,7 +25,7 @@
 #include <ostream>    // for std::endl, std::ostream
 #include <streambuf>  // for std::streambuf
 #include <string>     // for std::string
-#if defined(BOOST_GCC)
+#if defined(BOOST_GCC) || (defined(BOOST_CLANG) && defined(BOOST_GNU_STDLIB))
 #include <stdexcept>
 #endif
 
