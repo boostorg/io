@@ -3,7 +3,8 @@
 # See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt
 #
 # NOTE: This does NOT run the unit tests for Boost.IO.
-#       It only tests, if the CMakeLists.txt file in it's root works as expected
+#       It only tests, if the CMakeLists.txt file in the
+#       Boost.IO root directory works as expected.
 
 cmake_minimum_required( VERSION 3.5 )
 
