@@ -17,6 +17,18 @@ branches:
     - master
     - develop
 
+matrix:
+  include:
+    - os: linux
+      env: TEST_CMAKE=TRUE #Only for easier identification in travis web gui
+      install:
+        - git clone --depth 1 https://github.com/boostorg/config.git ../config
+
+      script:
+        - mkdir __build__ && cd __build__
+        - cmake ../test/test_cmake
+        - cmake --build .
+
 install:
   - cd ..
   - git clone -b $TRAVIS_BRANCH --depth 1 https://github.com/boostorg/boost.git boost-root
