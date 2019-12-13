@@ -10,7 +10,7 @@
 //  ----------------------------------------------------------------------------------  //
 
 #include <boost/io/detail/quoted_manip.hpp>
-#include <boost/detail/lightweight_test.hpp>
+#include <boost/core/lightweight_test.hpp>
 #include <iostream>
 #include <sstream>
 

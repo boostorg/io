@@ -4,6 +4,9 @@
 //  subject to the Boost Software License, Version 1.0.  (See accompanying file
 //  LICENSE_1_0.txt or a copy at <http://www.boost.org/LICENSE_1_0.txt>.)
 
+//  Copyright 2019 Glen Joseph Fernandes
+//  (glenjofe@gmail.com)
+
 //  See <http://www.boost.org/libs/io/> for the library's home page.
 
 //  Revision History
@@ -11,9 +14,8 @@
 //   26 Feb 2002  Initial version (Daryle Walker)
 
 #include <boost/config.hpp>
-#include <boost/test/minimal.hpp>  // main, BOOST_CHECK, etc.
+#include <boost/core/lightweight_test.hpp>
 
-#include <boost/cstdlib.hpp>       // for boost::exit_success
 #include <boost/io/ios_state.hpp>  // for boost::io::ios_flags_saver, etc.
 
 #include <cstddef>    // for std::size_t
@@ -68,12 +70,7 @@ void  saver_tests_2( std::istream &input, std::ostream &output,
 
 
 // Test program
-int
-test_main
-(
-    int         ,   // "argc" is unused
-    char *      []  // "argv" is unused
-)
+int main()
 {
     using std::cout;
     using std::ios_base;
@@ -104,35 +101,35 @@ test_main
     saver_tests_1( cin, cout, std::cerr );
 
     // Check if states are back to normal
-    BOOST_CHECK( &cin == cout.pword(my_index) );
-    BOOST_CHECK( 42L == cout.iword(my_index) );
-    BOOST_CHECK( cout_locale == cout.getloc() );
-    BOOST_CHECK( cout_fill == cout.fill() );
-    BOOST_CHECK( cout_sb == cout.rdbuf() );
-    BOOST_CHECK( cin_tie == cin.tie() );
-    BOOST_CHECK( cout_exceptions == cout.exceptions() );
-    BOOST_CHECK( cout_iostate == cout.rdstate() );
-    BOOST_CHECK( cout_width == cout.width() );
-    BOOST_CHECK( cout_precision == cout.precision() );
-    BOOST_CHECK( cout_flags == cout.flags() );
+    BOOST_TEST( &cin == cout.pword(my_index) );
+    BOOST_TEST( 42L == cout.iword(my_index) );
+    BOOST_TEST( cout_locale == cout.getloc() );
+    BOOST_TEST( cout_fill == cout.fill() );
+    BOOST_TEST( cout_sb == cout.rdbuf() );
+    BOOST_TEST( cin_tie == cin.tie() );
+    BOOST_TEST( cout_exceptions == cout.exceptions() );
+    BOOST_TEST( cout_iostate == cout.rdstate() );
+    BOOST_TEST( cout_width == cout.width() );
+    BOOST_TEST( cout_precision == cout.precision() );
+    BOOST_TEST( cout_flags == cout.flags() );
 
     // Run saver tests with combined saving and changing
     saver_tests_2( cin, cout, std::cerr );
 
     // Check if states are back to normal
-    BOOST_CHECK( &cin == cout.pword(my_index) );
-    BOOST_CHECK( 42L == cout.iword(my_index) );
-    BOOST_CHECK( cout_locale == cout.getloc() );
-    BOOST_CHECK( cout_fill == cout.fill() );
-    BOOST_CHECK( cout_sb == cout.rdbuf() );
-    BOOST_CHECK( cin_tie == cin.tie() );
-    BOOST_CHECK( cout_exceptions == cout.exceptions() );
-    BOOST_CHECK( cout_iostate == cout.rdstate() );
-    BOOST_CHECK( cout_width == cout.width() );
-    BOOST_CHECK( cout_precision == cout.precision() );
-    BOOST_CHECK( cout_flags == cout.flags() );
+    BOOST_TEST( &cin == cout.pword(my_index) );
+    BOOST_TEST( 42L == cout.iword(my_index) );
+    BOOST_TEST( cout_locale == cout.getloc() );
+    BOOST_TEST( cout_fill == cout.fill() );
+    BOOST_TEST( cout_sb == cout.rdbuf() );
+    BOOST_TEST( cin_tie == cin.tie() );
+    BOOST_TEST( cout_exceptions == cout.exceptions() );
+    BOOST_TEST( cout_iostate == cout.rdstate() );
+    BOOST_TEST( cout_width == cout.width() );
+    BOOST_TEST( cout_precision == cout.precision() );
+    BOOST_TEST( cout_flags == cout.flags() );
 
-    return boost::exit_success;
+    return boost::report_errors();
 }
 
 // Save, change, and restore stream properties
@@ -176,8 +173,8 @@ saver_tests_1
     output.imbue( loc );
     output << '\t' << test_bool << '\n';
 
-    BOOST_CHECK( &err == output.pword(my_index) );
-    BOOST_CHECK( 69L == output.iword(my_index) );
+    BOOST_TEST( &err == output.pword(my_index) );
+    BOOST_TEST( 69L == output.iword(my_index) );
 
     try
     {
@@ -195,7 +192,7 @@ saver_tests_1
 #endif
     {
         err << "Got the expected I/O failure: \"" << f.what() << "\".\n";
-        BOOST_CHECK( output.exceptions() == ios_base::goodbit );
+        BOOST_TEST( output.exceptions() == ios_base::goodbit );
     }
     catch ( ... )
     {
@@ -239,8 +236,8 @@ saver_tests_2
     boost::io::ios_locale_saver const  ils( output, loc );
     output << '\t' << test_bool << '\n';
 
-    BOOST_CHECK( &err == output.pword(my_index) );
-    BOOST_CHECK( 69L == output.iword(my_index) );
+    BOOST_TEST( &err == output.pword(my_index) );
+    BOOST_TEST( 69L == output.iword(my_index) );
 
     try
     {
@@ -257,7 +254,7 @@ saver_tests_2
 #endif
     {
         err << "Got the expected I/O failure: \"" << f.what() << "\".\n";
-        BOOST_CHECK( output.exceptions() == ios_base::goodbit );
+        BOOST_TEST( output.exceptions() == ios_base::goodbit );
     }
     catch ( ... )
     {
