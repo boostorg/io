@@ -1,0 +1,33 @@
+////
+Copyright 2019 Glen Joseph Fernandes
+(glenjofe@gmail.com)
+
+Distributed under the Boost Software License, Version 1.0.
+(http://www.boost.org/LICENSE_1_0.txt)
+////
+
+# Boost.IO
+Daryle Walker, Beman Dawes
+:idprefix:
+:source-language: cpp
+:toc: left
+
+The I/O sub-library of Boost helps segregate the large number of Boost headers.
+This sub-library should contain various items to use with/for the standard I/O
+library.
+
+:leveloffset: +1
+
+include::ios_state.adoc[]
+include::quoted.adoc[]
+
+:leveloffset: -1
+
+## Copyright and License
+
+* Copyright 2002 Daryle Walker
+* Copyright 2002, 2006, 2007, 2009, 2010 Beman Dawes
+* Copyright 2019 Glen Joseph Fernandes
+
+Distributed under the
+http://www.boost.org/LICENSE_1_0.txt[Boost Software License, Version 1.0].
