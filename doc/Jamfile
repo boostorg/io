@@ -6,14 +6,14 @@
 
 import asciidoctor ;
 
-html span.html : span.adoc ;
+html io.html : io.adoc ;
 
-install html_ : span.html : <location>html ;
+install html_ : io.html : <location>html ;
 
-pdf span.pdf : span.adoc ;
-explicit span.pdf ;
+pdf io.pdf : io.adoc ;
+explicit io.pdf ;
 
-install pdf_ : span.pdf : <location>pdf ;
+install pdf_ : io.pdf : <location>pdf ;
 explicit pdf_ ;
 
 alias boostdoc ;
