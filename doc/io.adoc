@@ -7,7 +7,8 @@ Distributed under the Boost Software License, Version 1.0.
 ////
 
 # Boost.IO
-Daryle Walker, Beman Dawes
+Daryle Walker, Beman Dawes, Glen Joseph Fernandes <glenjofe@gmail.com>
+:docinfo: private-footer
 :idprefix:
 :source-language: cpp
 :toc: left
@@ -19,6 +20,7 @@ library.
 :leveloffset: +1
 
 include::ios_state.adoc[]
+include::ostream_joiner.adoc[]
 
 :leveloffset: -1
 
