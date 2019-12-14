@@ -19,7 +19,6 @@ library.
 :leveloffset: +1
 
 include::ios_state.adoc[]
-include::quoted.adoc[]
 
 :leveloffset: -1
 

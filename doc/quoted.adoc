@@ -129,3 +129,11 @@ Remarks:: `string`, `escape`, and `delim` have the type and value of the
 corresponding arguments of the call to the `quoted` function that constructed
 `proxy`.
 Returns:: `is`.
+
+## Acknowledgements
+
+The `quoted()` stream manipulator emerged from discussions on the Boost
+developers mailing list. Participants included Beman Dawes, Rob Stewart,
+Alexander Lamaison, Eric Niebler, Vicente Botet, Andrey Semashev,
+Phil Richards, and Rob Murray. Eric Niebler's suggestions provided the basis
+for the name and form of the templates.
