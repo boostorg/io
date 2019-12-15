@@ -6,7 +6,7 @@
         "Beman Dawes",
         "Glen Fernandes"
     ],
-    "description": "Utilities for using the standard I/O library.",
+    "description": "Utilities for the standard I/O library.",
     "documentation": "doc/html/io.html",
     "category": [
         "IO"
