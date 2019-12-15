@@ -1,15 +1,17 @@
 {
     "key": "io",
-    "name": "IO State Savers",
+    "name": "IO",
     "authors": [
         "Daryle Walker",
-        "Beman Dawes"
+        "Beman Dawes",
+        "Glen Fernandes"
     ],
-    "description": "Utilities for using the standard I/O library.",
+    "description": "Utilities for the standard I/O library.",
+    "documentation": "doc/html/io.html",
     "category": [
         "IO"
     ],
     "maintainers": [
-        "Daryle Walker <darylew -at- hotmail.com>"
+        "Glen Fernandes <glenjofe -at- gmail.com>"
     ]
 }
