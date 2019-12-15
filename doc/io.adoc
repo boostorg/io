@@ -20,6 +20,7 @@ This library contains various utilities for the standard I/O library.
 include::ios_state.adoc[]
 include::quoted.adoc[]
 include::ostream_joiner.adoc[]
+include::ostream_put.adoc[]
 
 :leveloffset: -1
 
