@@ -12,7 +12,7 @@ Distributed under the Boost Software License, Version 1.0.
 
 #include <boost/config/header_deprecated.hpp>
 
-BOOST_HEADER_DEPRECATED("<boost/io/quoted.hpp>");
+BOOST_HEADER_DEPRECATED("<boost/io/quoted.hpp>")
 
 #include <boost/io/quoted.hpp>
 
