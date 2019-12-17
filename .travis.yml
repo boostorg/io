@@ -279,12 +279,15 @@ install:
   - cd ..
   - git clone -b $BOOST_BRANCH https://github.com/boostorg/boost.git boost
   - cd boost
-  - git submodule update --init tools/build
-  - git submodule update --init libs/config
-  - git submodule update --init tools/boostdep
+  - git submodule init libs/assert
+  - git submodule init libs/config
+  - git submodule init libs/core
+  - git submodule init libs/headers
+  - git submodule init tools/build
+  - git submodule init tools/boost_install
+  - git submodule update
   - mkdir -p libs/io
   - cp -r $TRAVIS_BUILD_DIR/* libs/io
-  - python tools/boostdep/depinst/depinst.py io
   - ./bootstrap.sh
   - ./b2 headers
 
