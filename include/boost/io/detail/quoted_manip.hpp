@@ -10,9 +10,10 @@ Distributed under the Boost Software License, Version 1.0.
 #ifndef BOOST_IO_DETAIL_QUOTED_MANIP_HPP
 #define BOOST_IO_DETAIL_QUOTED_MANIP_HPP
 
-/*
-The new implemenation is public in <boost/io/quoted.hpp>
-*/
+#include <boost/config/header_deprecated.hpp>
+
+BOOST_HEADER_DEPRECATED("<boost/io/quoted.hpp>")
+
 #include <boost/io/quoted.hpp>
 
 #endif

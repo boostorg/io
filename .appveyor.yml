@@ -39,18 +39,20 @@ install:
   - cd ..
   - git clone -b %BOOST_BRANCH% https://github.com/boostorg/boost.git boost
   - cd boost
-  - git submodule update --init tools/build
-  - git submodule update --init libs/config
-  - git submodule update --init tools/boostdep
+  - git submodule init libs/assert
+  - git submodule init libs/config
+  - git submodule init libs/core
+  - git submodule init libs/headers
+  - git submodule init tools/build
+  - git submodule init tools/boost_install
+  - git submodule update
   - xcopy /s /e /q %APPVEYOR_BUILD_FOLDER% libs\io\
-  - python tools/boostdep/depinst/depinst.py io
   - cmd /c bootstrap
   - b2 headers
 
 build: off
 
 test_script:
-  - PATH=%ADDPATH%%PATH%
   - if not "%CXXSTD%" == "" set CXXSTD=cxxstd=%CXXSTD%
   - if not "%ADDRMD%" == "" set ADDRMD=address-model=%ADDRMD%
   - b2 libs/io/test toolset=%TOOLSET% %CXXSTD% %ADDRMD%
