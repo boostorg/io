@@ -107,10 +107,9 @@ ostream_joiner& operator=(const T& value);
 ```
 
 [.specification]
-Effects::
-* If the is the first call to this member function, write the stored delimiter
-to the stored stream reference.
-* Writes `value` to the stored stream reference.
+Effects:: If the is the first call to this member function, write the stored
+delimiter to the stored stream reference. Writes `value` to the stored stream
+reference.
 Returns:: `*this`.
 
 ```
