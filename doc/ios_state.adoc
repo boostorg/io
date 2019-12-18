@@ -109,13 +109,14 @@ The basic saver classes have this format:
 
 [subs=+quotes]
 ```
-class saver_class {
+class saver {
+public:
     typedef std::ios_base state_type;
     typedef `implementation_defined` aspect_type;
 
-    explicit saver_class(state_type& s);
-    saver_class(state_type& s, const aspect_type& new_value);
-    ~saver_class();
+    explicit saver(state_type& s);
+    saver(state_type& s, const aspect_type& new_value);
+    ~saver();
 
     void restore();
 };
@@ -159,13 +160,14 @@ The saver class templates have this format:
 [subs=+quotes]
 ```
 template<class Ch, class Tr>
-class saver_class {
+class saver {
+public:
     typedef std::basic_ios<Ch, Tr> state_type;
     typedef `implementation-defined` aspect_type;
 
-    explicit saver_class(state_type& s);
-    saver_class(state_type& s, const aspect_type& new_value);
-    ~saver_class();
+    explicit saver(state_type& s);
+    saver(state_type& s, const aspect_type& new_value);
+    ~saver();
 
     void restore();
 };
@@ -259,7 +261,7 @@ The code used in the rationale can be improved at two places. The printing
 function could use a saver around the code that changes the formatting state.
 Or the calling function can surround the call with a saver. Or both can be
 done, especially if the user does not know if the printing function uses a
-state saver. If the user wants a series of changes back & forth, without
+state saver. If the user wants a series of changes back and forth, without
 surrounding each change within a separate block, the restore member function
 can be called between each trial.
 
