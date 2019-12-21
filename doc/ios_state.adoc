@@ -308,6 +308,10 @@ test file `ios_state_test.cpp`.
 
 ## History
 
+### 20 Dec 2019
+
+Glen Fernandes made all the saver classes non-copyable.
+
 ### 28 Feb 2005
 
 Daryle Walker added the restore member functions, based on suggestions by
