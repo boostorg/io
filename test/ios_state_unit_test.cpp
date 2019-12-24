@@ -42,7 +42,7 @@ protected:
 };
 
 void
-ios_flags_saver_unit_test(int index)
+ios_flags_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(std::ios_base::skipws | std::ios_base::dec, ss.flags());
@@ -69,7 +69,7 @@ ios_flags_saver_unit_test(int index)
 }
 
 void
-ios_precision_saver_unit_test(int index)
+ios_precision_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(6, ss.precision());
@@ -90,7 +90,7 @@ ios_precision_saver_unit_test(int index)
 }
 
 void
-ios_width_saver_unit_test(int index)
+ios_width_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(0, ss.width());
@@ -111,7 +111,7 @@ ios_width_saver_unit_test(int index)
 }
 
 void
-ios_iostate_saver_unit_test(int index)
+ios_iostate_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(std::ios_base::goodbit, ss.rdstate());
@@ -146,7 +146,7 @@ ios_iostate_saver_unit_test(int index)
 }
 
 void
-ios_exception_saver_unit_test(int index)
+ios_exception_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(std::ios_base::goodbit, ss.exceptions());
@@ -182,7 +182,7 @@ ios_exception_saver_unit_test(int index)
 }
 
 void
-ios_tie_saver_unit_test(int index)
+ios_tie_saver_unit_test()
 {
     BOOST_TEST(NULL == std::cout.tie());
     {
@@ -202,7 +202,7 @@ ios_tie_saver_unit_test(int index)
 }
 
 void
-ios_rdbuf_saver_unit_test(int index)
+ios_rdbuf_saver_unit_test()
 {
     std::iostream s(NULL);
     BOOST_TEST(NULL == s.rdbuf());
@@ -225,7 +225,7 @@ ios_rdbuf_saver_unit_test(int index)
 }
 
 void
-ios_fill_saver_unit_test(int index)
+ios_fill_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(' ',  ss.fill());
@@ -246,7 +246,7 @@ ios_fill_saver_unit_test(int index)
 }
 
 void
-ios_locale_saver_unit_test(int index)
+ios_locale_saver_unit_test()
 {
     typedef std::numpunct<char> npc_type;
     std::stringstream ss;
@@ -325,7 +325,7 @@ ios_pword_saver_unit_test(int index)
 }
 
 void
-ios_base_all_saver_unit_test(int index)
+ios_base_all_saver_unit_test()
 {
     std::stringstream ss;
     BOOST_TEST_EQ(std::ios_base::skipws | std::ios_base::dec, ss.flags());
@@ -349,7 +349,7 @@ ios_base_all_saver_unit_test(int index)
 }
 
 void
-ios_all_saver_unit_test(int index)
+ios_all_saver_unit_test()
 {
     typedef std::numpunct<char> npc_type;
     std::stringbuf sb;
@@ -443,19 +443,19 @@ ios_word_saver_unit_test(int index)
 int main()
 {
     int index = std::ios_base::xalloc();
-    ios_flags_saver_unit_test(index);
-    ios_precision_saver_unit_test(index);
-    ios_width_saver_unit_test(index);
-    ios_iostate_saver_unit_test(index);
-    ios_exception_saver_unit_test(index);
-    ios_tie_saver_unit_test(index);
-    ios_rdbuf_saver_unit_test(index);
-    ios_fill_saver_unit_test(index);
-    ios_locale_saver_unit_test(index);
+    ios_flags_saver_unit_test();
+    ios_precision_saver_unit_test();
+    ios_width_saver_unit_test();
+    ios_iostate_saver_unit_test();
+    ios_exception_saver_unit_test();
+    ios_tie_saver_unit_test();
+    ios_rdbuf_saver_unit_test();
+    ios_fill_saver_unit_test();
+    ios_locale_saver_unit_test();
     ios_iword_saver_unit_test(index);
     ios_pword_saver_unit_test(index);
-    ios_base_all_saver_unit_test(index);
-    ios_all_saver_unit_test(index);
+    ios_base_all_saver_unit_test();
+    ios_all_saver_unit_test();
     ios_word_saver_unit_test(index);
     return boost::report_errors();
 }
