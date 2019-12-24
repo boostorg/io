@@ -8,6 +8,8 @@
 
 import testing ;
 
+project : requirements <warnings>pedantic <warnings-as-errors>on ;
+
 run ios_state_unit_test.cpp ;
 run ios_state_test.cpp ;
 run quoted_test.cpp ;

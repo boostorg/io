@@ -75,7 +75,7 @@ void saver_tests_1(int index,
     BOOST_TEST(69L == output.iword(index));
     try {
         boost::io::ios_exception_saver ies(output);
-        boost::io::ios_iostate_saver iis(output);
+        boost::io::ios_iostate_saver ias(output);
         output.exceptions(std::ios_base::eofbit | std::ios_base::badbit);
         output.setstate(std::ios_base::eofbit);
         BOOST_ERROR("previous line should have thrown");
@@ -114,7 +114,7 @@ void saver_tests_2(int index,
     BOOST_TEST(69L == output.iword(index));
     try {
         boost::io::ios_exception_saver ies(output, std::ios_base::eofbit);
-        boost::io::ios_iostate_saver iis(output,
+        boost::io::ios_iostate_saver ias(output,
             output.rdstate() | std::ios_base::eofbit );
         BOOST_ERROR("previous line should have thrown");
 #if defined(BOOST_GCC) || (defined(BOOST_CLANG) && defined(BOOST_GNU_STDLIB))

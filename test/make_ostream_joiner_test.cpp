@@ -5,8 +5,8 @@ Copyright 2019 Glen Joseph Fernandes
 Distributed under the Boost Software License, Version 1.0.
 (http://www.boost.org/LICENSE_1_0.txt)
 */
-#include <boost/core/lightweight_test.hpp>
 #include <boost/io/ostream_joiner.hpp>
+#include <boost/core/lightweight_test.hpp>
 #include <sstream>
 
 int main()
