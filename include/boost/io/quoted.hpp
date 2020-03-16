@@ -31,15 +31,14 @@ inline std::basic_ostream<Char, Traits>&
 operator<<(std::basic_ostream<Char, Traits>& os,
     const quoted_proxy<const Char*, Char>& proxy)
 {
-    os << proxy.delim;
+    os.put(proxy.delim);
     for (const Char* it = proxy.string; *it; ++it) {
         if (*it == proxy.delim || *it == proxy.escape) {
-            os << proxy.escape;
+            os.put(proxy.escape);
         }
-        os << *it;
+        os.put(*it);
     }
-    os << proxy.delim;
-    return os;
+    return os.put(proxy.delim);
 }
 
 template<class Char, class Traits, class Alloc>
@@ -48,18 +47,16 @@ quoted_output(std::basic_ostream<Char, Traits>& os,
     const std::basic_string<Char, Traits, Alloc>& string, Char escape,
     Char delim)
 {
-    os << delim;
-    typename std::basic_string<Char, Traits,
-        Alloc>::const_iterator end = string.end();
+    os.put(delim);
     for (typename std::basic_string<Char, Traits,
-        Alloc>::const_iterator it = string.begin(); it != end; ++it) {
+            Alloc>::const_iterator it = string.begin(), end = string.end();
+        it != end; ++it) {
         if (*it == delim || *it == escape) {
-            os << escape;
+            os.put(escape);
         }
-        os << *it;
+        os.put(*it);
     }
-    os << delim;
-    return os;
+    return os.put(delim);
 }
 
 template <class Char, class Traits, class Alloc>
@@ -86,21 +83,20 @@ inline std::basic_istream<Char, Traits>&
 operator>>(std::basic_istream<Char, Traits>& is,
     const quoted_proxy<std::basic_string<Char, Traits, Alloc>*, Char>& proxy)
 {
-    proxy.string->clear();
     Char ch;
-    if (!(is >> ch).good()) {
+    if (!(is >> ch)) {
         return is;
     }
     if (ch != proxy.delim) {
         is.unget();
-        is >> *proxy.string;
-        return is;
+        return is >> *proxy.string;
     }
     {
         boost::io::ios_flags_saver ifs(is);
         std::noskipws(is);
-        while ((is >> ch).good() && ch != proxy.delim) {
-            if (ch == proxy.escape && !(is >> ch).good()) {
+        proxy.string->clear();
+        while ((is >> ch) && ch != proxy.delim) {
+            if (ch == proxy.escape && !(is >> ch)) {
                 break;
             }
             proxy.string->push_back(ch);

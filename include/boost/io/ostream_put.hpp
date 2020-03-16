@@ -46,17 +46,21 @@ class osp_guard {
 public:
     explicit osp_guard(std::basic_ostream<charT, traits>& os) BOOST_NOEXCEPT
         : os_(&os) { }
+
     ~osp_guard() BOOST_NOEXCEPT_IF(false) {
         if (os_) {
             os_->setstate(std::basic_ostream<charT, traits>::badbit);
         }
     }
+
     void release() BOOST_NOEXCEPT {
         os_ = 0;
     }
+
 private:
     osp_guard(const osp_guard&);
     osp_guard& operator=(const osp_guard&);
+
     std::basic_ostream<charT, traits>* os_;
 };
 
