@@ -149,7 +149,7 @@ public:
         : s_save_(s)
         , a_save_(s.exceptions()) { }
 
-#if BOOST_WORKAROUND(__BORLANDC__, BOOST_TESTED_AT(0x582))
+#if BOOST_WORKAROUND(BOOST_BORLANDC, BOOST_TESTED_AT(0x582))
     basic_ios_exception_saver(state_type& s, aspect_type a)
 #else
     basic_ios_exception_saver(state_type& s, const aspect_type& a)
