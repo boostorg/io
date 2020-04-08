@@ -8,7 +8,7 @@ Distributed under the Boost Software License, Version 1.0.
 #define BOOST_IO_IOS_STATE_HPP
 
 #include <boost/io_fwd.hpp>
-#include <boost/detail/workaround.hpp>
+#include <boost/config/workaround.hpp>
 #include <ios>
 #ifndef BOOST_NO_STD_LOCALE
 #include <locale>
