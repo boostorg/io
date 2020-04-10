@@ -140,3 +140,6 @@ for the name and form of the templates.
 
 Beman Dawes started the implementation of `quoted()` as a private detail
 header. Glen Fernandes updated the implementation and also made it public.
+
+Glen Fernandes corrected the implementation to properly account for stream
+width and fill, and optimized it to write directly to the stream buffer.

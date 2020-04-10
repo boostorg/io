@@ -13,6 +13,7 @@ project : requirements <warnings>pedantic <warnings-as-errors>on ;
 run ios_state_unit_test.cpp ;
 run ios_state_test.cpp ;
 run quoted_test.cpp ;
+run quoted_fill_test.cpp ;
 run ostream_joiner_test.cpp ;
 run make_ostream_joiner_test.cpp ;
 run ostream_put_test.cpp ;
