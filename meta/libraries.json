@@ -13,5 +13,6 @@
     ],
     "maintainers": [
         "Glen Fernandes <glenjofe -at- gmail.com>"
-    ]
+    ],
+    "cxxstd": "03"
 }
