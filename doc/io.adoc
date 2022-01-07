@@ -25,6 +25,8 @@ include::ostream_joiner.adoc[]
 
 include::ostream_put.adoc[]
 
+include::nullstream.adoc[]
+
 :leveloffset: -1
 
 ## Copyright and License
