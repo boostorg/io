@@ -283,6 +283,7 @@ install:
   - git submodule init libs/config
   - git submodule init libs/core
   - git submodule init libs/headers
+  - git submodule init libs/type_traits
   - git submodule init tools/build
   - git submodule init tools/boost_install
   - git submodule update

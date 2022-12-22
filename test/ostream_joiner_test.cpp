@@ -6,55 +6,55 @@ Distributed under the Boost Software License, Version 1.0.
 (http://www.boost.org/LICENSE_1_0.txt)
 */
 #include <boost/io/ostream_joiner.hpp>
-#include <boost/core/is_same.hpp>
+#include <boost/type_traits/is_same.hpp>
 #include <boost/core/lightweight_test.hpp>
 #include <sstream>
 
 void test_char_type()
 {
-    BOOST_TEST((boost::core::is_same<char,
+    BOOST_TEST((boost::is_same<char,
         boost::io::ostream_joiner<const char*>::char_type>::value));
 }
 
 void test_traits_type()
 {
-    BOOST_TEST((boost::core::is_same<std::char_traits<char>,
+    BOOST_TEST((boost::is_same<std::char_traits<char>,
         boost::io::ostream_joiner<const char*>::traits_type>::value));
 }
 
 void test_ostream_type()
 {
-    BOOST_TEST((boost::core::is_same<std::ostream,
+    BOOST_TEST((boost::is_same<std::ostream,
         boost::io::ostream_joiner<const char*>::ostream_type>::value));
 }
 
 void test_iterator_category()
 {
-    BOOST_TEST((boost::core::is_same<std::output_iterator_tag,
+    BOOST_TEST((boost::is_same<std::output_iterator_tag,
         boost::io::ostream_joiner<const char*>::iterator_category>::value));
 }
 
 void test_value_type()
 {
-    BOOST_TEST((boost::core::is_same<void,
+    BOOST_TEST((boost::is_same<void,
         boost::io::ostream_joiner<const char*>::value_type>::value));
 }
 
 void test_difference_type()
 {
-    BOOST_TEST((boost::core::is_same<void,
+    BOOST_TEST((boost::is_same<void,
         boost::io::ostream_joiner<const char*>::difference_type>::value));
 }
 
 void test_pointer()
 {
-    BOOST_TEST((boost::core::is_same<void,
+    BOOST_TEST((boost::is_same<void,
         boost::io::ostream_joiner<const char*>::pointer>::value));
 }
 
 void test_reference()
 {
-    BOOST_TEST((boost::core::is_same<void,
+    BOOST_TEST((boost::is_same<void,
         boost::io::ostream_joiner<const char*>::reference>::value));
 }
 
