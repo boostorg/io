@@ -9,15 +9,13 @@ constant boost_dependencies :
     /boost/config//boost_config ;
 
 project /boost/io
-    : common-requirements
-        <include>include
     ;
 
 explicit
-    [ alias boost_io : : : : <library>$(boost_dependencies) ]
+    [ alias boost_io : : :
+        : <include>include <library>$(boost_dependencies) ]
     [ alias all : boost_io test ]
     ;
 
 call-if : boost-library io
     ;
-
