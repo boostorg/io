@@ -13,40 +13,48 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - toolset: gcc-4.8
+          - toolset: gcc
+            compiler: g++-4.8
             standard: "03,11"
             os: ubuntu-latest
             container: ubuntu:18.04
             install: g++-4.8
-          - toolset: gcc-5
+          - toolset: gcc
+            compiler: g++-5
             standard: "03,11,14,1z"
             os: ubuntu-latest
             container: ubuntu:18.04
             install: g++-5
-          - toolset: gcc-6
+          - toolset: gcc
+            compiler: g++-6
             standard: "03,11,14,1z"
             os: ubuntu-latest
             container: ubuntu:18.04
             install: g++-6
-          - toolset: gcc-7
+          - toolset: gcc
+            compiler: g++-7
             standard: "03,11,14,17"
             os: ubuntu-latest
             container: ubuntu:18.04
-          - toolset: gcc-8
+          - toolset: gcc
+            compiler: g++-8
             standard: "03,11,14,17,2a"
             os: ubuntu-latest
             container: ubuntu:18.04
             install: g++-8
-          - toolset: gcc-9
+          - toolset: gcc
+            compiler: g++-9
             standard: "03,11,14,17,2a"
             os: ubuntu-latest
             container: ubuntu:18.04
-          - toolset: gcc-10
+          - toolset: gcc
+            compiler: g++-10
             standard: "03,11,14,17,2a"
             os: ubuntu-latest
             container: ubuntu:20.04
             install: g++-10
-          - toolset: gcc-11
+          - toolset: gcc
+            compiler: g++-11
             standard: "03,11,14,17,2a"
             os: ubuntu-latest
             container: ubuntu:20.04
